@@ -499,7 +499,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 477168297}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999999
+  m_Size: 0.9999997
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1377,7 +1377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.08674903, y: -0.91324544, z: 0.27980858, w: 0.28313342}
-  m_LocalPosition: {x: 4.47, y: 3.41, z: 2.66}
+  m_LocalPosition: {x: 6.04, y: 5.29, z: 4.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448337495}
@@ -2356,6 +2356,10 @@ MonoBehaviour:
   search_field: {fileID: 2081075233}
   m_textPrefab: {fileID: 8822638352860253098, guid: 7a199d1d7da38034c9301dfbea4b387b, type: 3}
   m_content: {fileID: 308711330}
+  m_models:
+  - {fileID: 6729418650760129345, guid: ff355cb85fe550240bcd61ee5865246d, type: 3}
+  - {fileID: 6494510645349439286, guid: 8b7350d60077bad418c87568ec76a118, type: 3}
+  - {fileID: 3007134473378742651, guid: 18ab4d26b54518649b033cee7e20078a, type: 3}
 --- !u!4 &2076869150
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,10 @@ public class UIManager : MonoBehaviour
     private GameObject m_textPrefab;
     [SerializeField]
     private GameObject m_content;
+
+    [Header("3D Model")]
+    [SerializeField]
+    private List<GameObject> m_models = new List<GameObject>();
    
     
 
@@ -70,10 +75,9 @@ public class UIManager : MonoBehaviour
             m_charIndicator.Clear();
         }
 
-        
-        
         string extract_pokemon = search_field.text;
         var _pokemon           = await m_api.GetPokemon(extract_pokemon);
+
         if(_pokemon.types == null)
         {
             //TODO: Implement error handling
@@ -113,7 +117,6 @@ public class UIManager : MonoBehaviour
             int counter = 1;
            for(int i = 0; i < _charsMap[characteristic]; i++)
             {
-                //TODO: instantiate UI Elements
                 /*create UI element*/
                 GameObject charText = Instantiate(m_textPrefab, m_content.transform.position, transform.rotation) as GameObject;
                 m_charIndicator.Add(charText);
@@ -123,6 +126,7 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        
         
     }
 }

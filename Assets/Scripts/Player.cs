@@ -13,11 +13,16 @@ public class Player : MonoBehaviour
     [Range(0, 100)]
     private int m_bulletForce = 10;
 
-    private Transform _target;
+    private Transform m_target;
+
+    public Transform _target {
+        get { return m_target; }
+        private set { }
+    }
 
     private void Awake()
     {
-        _target = this.GetComponent<CameraController>()._target;
+        m_target = this.GetComponent<CameraController>()._target;
     }
 
     /*
@@ -30,7 +35,7 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(m_bullet, m_weaponTransform.position, transform.rotation) as GameObject;
         Rigidbody bulletRB = bullet.GetComponent<Rigidbody>();
 
-        Vector3 dir = _target.position - transform.position;
+        Vector3 dir = m_target.position - transform.position;
         Vector3 dir_norm = Vector3.Normalize(dir);
         bulletRB.AddForce( dir_norm * m_bulletForce, ForceMode.Impulse);
     }
