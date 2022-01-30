@@ -23,15 +23,16 @@ public class UIManager : MonoBehaviour
     #endregion
 
     private FireCommand _fireCommand;
-    
+    private PokeAPI _api; 
     [SerializeField]
     private Player _player;
-
+   
     
 
     private void Start()
     {
         _fireCommand = new FireCommand();
+        _api = new PokeAPI();
     }
 
     public void Attack()
@@ -39,8 +40,9 @@ public class UIManager : MonoBehaviour
         _fireCommand.Execute(ref _player);
     }
 
-    public void Search()
+    public async void Search()
     {
-        Debug.Log("Search!");
+        var _pokemon = await _api.GetPokemon("umbreon");
+        Debug.Log(_pokemon);
     }
 }
