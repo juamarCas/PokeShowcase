@@ -246,7 +246,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 914883568}
-  - {fileID: 368166587}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -329,36 +328,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343972034}
   m_CullTransparentMesh: 1
---- !u!1 &368166586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 368166587}
-  m_Layer: 0
-  m_Name: Camera Target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &368166587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368166586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 296689955}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435625396
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +700,7 @@ GameObject:
   - component: {fileID: 914883569}
   m_Layer: 0
   m_Name: Squirtle
-  m_TagString: Untagged
+  m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +751,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4aa7d30bc11916f4c9a3211c7e27a41f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -989,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202ef53c6d43bae41bc1daa08503c2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_target: {fileID: 368166587}
+  m_target: {fileID: 296689955}
   m_vel: 100
 --- !u!114 &963194230
 MonoBehaviour:
@@ -1005,7 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponTransform: {fileID: 448337495}
   m_bullet: {fileID: 6735694511747280919, guid: ac72b1906f8186549ae4df107d98bda7, type: 3}
-  m_bulletForce: 2
+  m_bulletForce: 10
 --- !u!1 &1108168646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2076869150}
   - component: {fileID: 2076869149}
+  - component: {fileID: 2076869151}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1721,6 +1691,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076869151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076869148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dc81719d1dbd140b72d196a4524cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pokemonTag: Pokemon
 --- !u!1 &2081075231
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
         _target = this.GetComponent<CameraController>()._target;
     }
 
+    /*
+     Creates a bullet and push it to the targets direction
+     */
     public void Attack()
     {
         if (m_bullet == null) return;
@@ -29,6 +32,6 @@ public class Player : MonoBehaviour
 
         Vector3 dir = _target.position - transform.position;
         Vector3 dir_norm = Vector3.Normalize(dir);
-        bulletRB.AddForce( dir * m_bulletForce, ForceMode.Impulse);
+        bulletRB.AddForce( dir_norm * m_bulletForce, ForceMode.Impulse);
     }
 }

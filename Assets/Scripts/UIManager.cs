@@ -5,12 +5,31 @@ using Actions;
 
 public class UIManager : MonoBehaviour
 {
+    #region Singleton
+    public static UIManager _instance;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    #endregion
+
     private FireCommand _fireCommand;
     
     [SerializeField]
     private Player _player;
 
-    private void Awake()
+    
+
+    private void Start()
     {
         _fireCommand = new FireCommand();
     }
