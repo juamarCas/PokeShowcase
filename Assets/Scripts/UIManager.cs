@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Actions;
 
 public class UIManager : MonoBehaviour
@@ -26,6 +27,10 @@ public class UIManager : MonoBehaviour
     private PokeAPI _api; 
     [SerializeField]
     private Player _player;
+
+    [Header("UI Elements")]
+    [SerializeField]
+    private Text name_text;
    
     
 
@@ -33,6 +38,7 @@ public class UIManager : MonoBehaviour
     {
         _fireCommand = new FireCommand();
         _api = new PokeAPI();
+        name_text.text = "";
     }
 
     public void Attack()
@@ -43,6 +49,7 @@ public class UIManager : MonoBehaviour
     public async void Search()
     {
         var _pokemon = await _api.GetPokemon("umbreon");
-        Debug.Log(_pokemon.types[0].type.name);
+        //Debug.Log(_pokemon.types[0].type.name);
+        name_text.text = _pokemon.name;
     }
 }

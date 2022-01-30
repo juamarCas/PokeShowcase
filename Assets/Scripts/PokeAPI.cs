@@ -41,7 +41,9 @@ public class PokeAPI : MonoBehaviour
     /// <returns>A pokemon object with all the information</returns>
     public async Task<Pokemon> GetPokemon(string _pokemon)
     {
-        string url = api + "/" + pokemon_path + "/" + _pokemon;
+        string low_pokemon = _pokemon.ToLower();
+
+        string url = api + "/" + pokemon_path + "/" + low_pokemon;
         using var www = UnityWebRequest.Get(url);
         www.SetRequestHeader("Content-Type", "application/json");
 
