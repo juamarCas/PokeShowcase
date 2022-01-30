@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Pokemon object to deserialize a JSON
+/// </summary>
 [Serializable]
 public class Pokemon
 {

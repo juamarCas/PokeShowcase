@@ -55,6 +55,9 @@ public class UIManager : MonoBehaviour
         name_text.text = "";
     }
 
+    /// <summary>
+    /// Calls Attack command
+    /// </summary>
     public void Attack()
     {
         m_fireCommand.Execute(ref _player);
