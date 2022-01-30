@@ -64,7 +64,7 @@ public class PokeAPI : MonoBehaviour
 
         }*/
 
-        Pokemon pkmn = new Pokemon();
+        Pokemon pkmn = JsonUtility.FromJson<Pokemon>(json);
         return await Task.FromResult(pkmn);
     }
 }

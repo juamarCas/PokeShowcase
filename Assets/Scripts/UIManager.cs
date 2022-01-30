@@ -43,6 +43,6 @@ public class UIManager : MonoBehaviour
     public async void Search()
     {
         var _pokemon = await _api.GetPokemon("umbreon");
-        Debug.Log(_pokemon);
+        Debug.Log(_pokemon.name);
     }
 }
