@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [Serializable]
 public class Pokemon
 {
-    public Abilities[] abilities;
+    public Ability[] abilities;
     public int base_experience;
     public Generic[] forms;
     public Game_indices[] game_indices;
@@ -29,7 +29,7 @@ public class Pokemon
 
 
 [Serializable]
-public class Abilities
+public class Ability
 {
     public bool is_hidden;
     public int slot;

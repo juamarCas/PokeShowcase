@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     {
         if (m_bullet == null) return;
 
-        GameObject bullet = Instantiate(m_bullet, m_weaponTransform.position, transform.rotation);
+        GameObject bullet = Instantiate(m_bullet, m_weaponTransform.position, transform.rotation) as GameObject;
         Rigidbody bulletRB = bullet.GetComponent<Rigidbody>();
 
         Vector3 dir = _target.position - transform.position;
