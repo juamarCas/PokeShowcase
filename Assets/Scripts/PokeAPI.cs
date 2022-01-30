@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,16 +56,18 @@ public class PokeAPI : MonoBehaviour
        
 
         var json = www.downloadHandler.text;
+        Pokemon pkmn = new Pokemon();
 
-        /*try
+        try
         {
-
-        }catch(Exception ex)
+            pkmn = JsonUtility.FromJson<Pokemon>(json);
+        }
+        catch(Exception ex)
         {
+            Debug.Log(ex);
+        }
 
-        }*/
-
-        Pokemon pkmn = JsonUtility.FromJson<Pokemon>(json);
+        
         return await Task.FromResult(pkmn);
     }
 }

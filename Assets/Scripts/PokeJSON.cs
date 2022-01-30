@@ -1,3 +1,8 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+[Serializable]
 public class Pokemon
 {
     public Abilities[] abilities;
@@ -23,7 +28,7 @@ public class Pokemon
 }
 
 
-
+[Serializable]
 public class Abilities
 {
     public bool is_hidden;
@@ -62,10 +67,11 @@ public class Sprites
     public string front_shiny_female;
 }
 
+[Serializable]
 public class Types
 {
-    int slot;
-    Generic type;
+    public int slot { get; set; }
+    public Generic type;
 }
 
 public class Stats
@@ -76,6 +82,7 @@ public class Stats
 }
 
 /*Generic class indicate objects with just name and url*/
+[Serializable]
 public class Generic
 {
     public string name;
