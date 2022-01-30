@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace Actions
 {
-    public class FireCommand: MonoBehaviour, ICommand
+    public class FireCommand: ICommand
     {
-        void ICommand.Execute(ref Player _player)
+        public void Execute(ref Player _player)
         {
+            if (_player == null) return;
 
+            _player.Attack();
         }
     }
 }

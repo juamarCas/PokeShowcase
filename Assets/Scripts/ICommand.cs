@@ -1,4 +1,4 @@
 public interface ICommand
 {
-    void Execute(ref Player _player);
+    public void Execute(ref Player _player);
 }

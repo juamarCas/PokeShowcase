@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Actions;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private FireCommand _fireCommand;
+    
+    [SerializeField]
+    private Player _player;
+
+    private void Awake()
     {
-        
+        _fireCommand = new FireCommand();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Attack()
     {
-        
+        _fireCommand.Execute(ref _player);
+    }
+
+    public void Search()
+    {
+        Debug.Log("Search!");
     }
 }
