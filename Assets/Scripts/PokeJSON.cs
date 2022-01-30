@@ -21,7 +21,7 @@ public class Pokemon
     public Generic species;
     public Sprites sprites;
     public Stats[] stats;
-    public Types[] types;
+    public Type[] types;
 
     int weight;
 
@@ -68,7 +68,7 @@ public class Sprites
 }
 
 [Serializable]
-public class Types
+public class Type
 {
     public int slot { get; set; }
     public Generic type;

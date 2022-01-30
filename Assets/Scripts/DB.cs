@@ -23,6 +23,14 @@ public class DB : MonoBehaviour
     #endregion
     [SerializeField]
     private string m_pokemonTag = "Pokemon";
+    [SerializeField]
+    private List<string> m_charsList = new List<string>();
+
+    public List<string> _charList
+    {
+        get { return m_charsList; }
+        private set { }
+    }
     
     public string _pokemonTag
     {
