@@ -71,7 +71,13 @@ public class UIManager : MonoBehaviour
         
         string extract_pokemon = search_field.text;
         var _pokemon           = await m_api.GetPokemon(extract_pokemon);
-        //Debug.Log(_pokemon.types[0].type.name);
+        Debug.Log(_pokemon);
+        if(_pokemon.types == null)
+        {
+            //TODO: Implement error handling
+            return;
+        }
+        
         name_text.text = _pokemon.name;
 
         int _typeCount    = _pokemon.types.Length;
@@ -108,6 +114,7 @@ public class UIManager : MonoBehaviour
                 //TODO: instantiate UI Elements
                 /*create UI element*/
                 GameObject charText = Instantiate(m_textPrefab, m_content.transform.position, transform.rotation) as GameObject;
+                m_charIndicator.Add(charText);
                 charText.transform.SetParent(m_content.transform, false);
                 charText.GetComponent<Text>().text = $"{characteristic}{counter}: {_generic[$"{characteristic}{counter}"].name}";
                 counter++;
