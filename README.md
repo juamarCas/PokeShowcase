@@ -12,6 +12,8 @@ This project is part of a technical test.</br>
 
 Use the **A** and **D** keys to move sideways. In the unity editor, you can modify the velocity of the movement by setting a value in the variable _vel_ of the _CameraController_ component in the _Main Camera_ object<br/>
 <br/>
+With the **Mouse wheel** you can zoom in and zoom out.</br>
+</br>
 By pressing the _Attack_ button the user will shot a sphere to interact with the pokemon. You can modify the force of the shot by modifying the _Bullet force_ variable of the Player component in the _Main Camera_ Object <br/>
 <br/>
 You can search for a pokemon with the _Search_ button. It will make a call to the PokeAPI in order to bring some information about the pokemon you have in the _input field_. Currently you have onlye access to three pokemon: umbreon, squirtle and snorlax</br>
