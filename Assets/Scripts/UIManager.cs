@@ -54,6 +54,9 @@ public class UIManager : MonoBehaviour
         m_fireCommand.Execute(ref _player);
     }
 
+    /// <summary>
+    /// Search a pokemon via the API
+    /// </summary>
     public async void Search()
     {
         /*clear UI*/
@@ -71,7 +74,6 @@ public class UIManager : MonoBehaviour
         
         string extract_pokemon = search_field.text;
         var _pokemon           = await m_api.GetPokemon(extract_pokemon);
-        Debug.Log(_pokemon);
         if(_pokemon.types == null)
         {
             //TODO: Implement error handling
@@ -87,22 +89,22 @@ public class UIManager : MonoBehaviour
         Dictionary<string, Generic> _generic = new Dictionary<string, Generic>();
 
         /*following the order of the list declared in the DB class*/
-        _charsMap.Add(DB._instance._charList[0], _typeCount);
-        _charsMap.Add(DB._instance._charList[1], _abilityCount);
+        _charsMap.Add(DB._instance._charList[DB._instance._typePos], _typeCount);
+        _charsMap.Add(DB._instance._charList[DB._instance._abilityPos], _abilityCount);
 
         /*auxiliary variable for unique identifier of characteristic*/
         int _genericCounter = 1;
 
         foreach(Type _type in _pokemon.types)
         {
-            _generic.Add($"{DB._instance._charList[0]}{_genericCounter}", _type.type);
+            _generic.Add($"{DB._instance._charList[DB._instance._charList.IndexOf(DB._instance._typeString)]}{_genericCounter}", _type.type);
             _genericCounter++;
         }
 
         _genericCounter = 1;
         foreach (Ability _ability in _pokemon.abilities)
         {
-            _generic.Add($"{DB._instance._charList[1]}{_genericCounter}", _ability.ability);
+            _generic.Add($"{DB._instance._charList[DB._instance._charList.IndexOf(DB._instance._abilityString)]}{_genericCounter}", _ability.ability);
             _genericCounter++;
         }
 
