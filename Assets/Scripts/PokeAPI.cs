@@ -3,30 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
-public class Pokemon
-{
-    private string m_name;
-    private string m_type1;
-    private string m_type2;
 
-    public string _name
-    {
-        get { return m_name; }
-        private set { }
-    }
-
-    public string _type1
-    {
-        get { return m_type1; }
-        private set { }
-    }
-
-    public string _type2
-    {
-        get { return m_type2; }
-        private set { }
-    }
-}
 
 public class PokeAPI : MonoBehaviour
 {
@@ -71,14 +48,22 @@ public class PokeAPI : MonoBehaviour
         while (!operation.isDone)
             await Task.Yield();
 
-        if(www.result == UnityWebRequest.Result.Success)
+        if(www.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log($"Success: {www.downloadHandler.text}");
+            Debug.LogError($"error: {www.error}");
         }
-        else
+       
+
+        var json = www.downloadHandler.text;
+
+        /*try
         {
-            Debug.Log("heyoo");
-        }
+
+        }catch(Exception ex)
+        {
+
+        }*/
+
         Pokemon pkmn = new Pokemon();
         return await Task.FromResult(pkmn);
     }
