@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6494510645349439287}
+  - component: {fileID: 7729956922997138200}
   m_Layer: 0
   m_Name: squirtle
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7729956922997138200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6494510645349439286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5538dcac3b489a64c8f07a816dc2c9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_name: squirtle
 --- !u!1001 &6494510644828528719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,16 +146,3 @@ CapsuleCollider:
   m_Height: 1.3727319
   m_Direction: 1
   m_Center: {x: -2.4600003, y: 0.03702601, z: 0.5247784}
---- !u!114 &7729098952342167553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6838139090856975412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5538dcac3b489a64c8f07a816dc2c9a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_name: squirtle

@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     private FireCommand m_fireCommand;
     private PokeAPI m_api;
     private List<GameObject> m_charIndicator = new List<GameObject>();
+    private GameObject m_currentGO;
     
     [SerializeField]
     private Player _player;
@@ -73,6 +74,11 @@ public class UIManager : MonoBehaviour
             }
 
             m_charIndicator.Clear();
+        }
+
+        if(m_currentGO != null)
+        {
+            Destroy(m_currentGO);
         }
 
         string extract_pokemon = search_field.text;
@@ -126,6 +132,10 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        GameObject _pokemonModel = m_models.Single(pkmn => pkmn.GetComponent<PokmnData>()._name == _pokemon.name);
+        if (_pokemonModel == null) return;
+
+        m_currentGO = Instantiate(_pokemonModel, _player._target.position, _player._target.rotation);
         
         
     }
